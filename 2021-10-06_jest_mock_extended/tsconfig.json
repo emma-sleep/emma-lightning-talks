@@ -1,0 +1,18 @@
+{
+    "extends": "@tsconfig/node14/tsconfig.json",
+    "exclude": ["node_modules", "etc", "dist"],
+    "compilerOptions": {
+        "outDir": "dist",
+        "noImplicitAny": true,
+        "strictNullChecks": true,
+        "strictFunctionTypes": true,
+        "strictBindCallApply": true,
+        "strictPropertyInitialization": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "noImplicitReturns": true,
+        "removeComments": true,
+        "incremental": true,
+        "sourceMap": true
+    }
+}

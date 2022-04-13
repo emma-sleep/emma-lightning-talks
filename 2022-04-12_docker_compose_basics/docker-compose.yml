@@ -1,0 +1,23 @@
+services:
+  asset-host:
+    container_name: asset-host
+    image: bitnami/nginx:1.20.2-debian-10-r71@sha256:50b6e3ccbb298f7409f4b9a68be91b99b7bfc911dbd9f5ac50f433a1325c2119
+    ports:
+      - 4040:8080
+    volumes:
+      - assets:/app/assets:ro
+    depends_on:
+      - asset-fetcher
+  asset-fetcher:
+    container_name: asset-fetcher
+    build: .
+    ports:
+      - 4050:3000
+    volumes:
+      - assets:/assets:rw
+    environment:
+      - CAT_API_KEY=${CAT_API_KEY}
+      - ASSET_LOCATION=/assets
+
+volumes:
+  assets:
