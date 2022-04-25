@@ -1,0 +1,9 @@
+dist
+node_modules
+etc/docs
+coverage
+# DON'T REMOVE THIS
+# the sops files MUST be changed only by sops and not by any other program
+# what happens is that if format the file outside of sops, the hash of the file content
+# will change, causing sops to fail while opening
+*sops.y*ml
